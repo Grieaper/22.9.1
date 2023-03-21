@@ -1,0 +1,22 @@
+def sort_list(lst):
+    # Реализация сортировки списка пузырьком
+    for i in range(len(lst)):
+        for j in range(len(lst) - i - 1):
+            if lst[j] > lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+
+input_string = input("Введите последовательность чисел через пробел: ")
+lst = list(map(int, input_string.split()))
+
+sort_list(lst)
+
+num = int(input("Введите число: "))
+
+for i in range(len(lst)):
+    if lst[i] < num:
+        continue
+    else:
+        index = i
+        break
+
+print("Номер позиции элемента, который меньше введенного числа, а следующий за ним больше или равен этому числу: ", index)
